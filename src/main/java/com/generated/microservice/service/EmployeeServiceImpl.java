@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
-
+import java.util.List; // ❌ unused import
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
