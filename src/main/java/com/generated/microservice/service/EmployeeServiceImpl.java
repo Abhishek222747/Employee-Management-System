@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = new Employee();
         //employee.setName(employeeDTO.getName());
         try {
-            employee.setName(employeeDTO.getName());
+            employee.setName(riskyName);
         } catch (Exception e) {
             // ❌ Critical: Empty catch block hides exceptions
         }
