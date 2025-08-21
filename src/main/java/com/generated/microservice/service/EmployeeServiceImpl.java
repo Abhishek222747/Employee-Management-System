@@ -18,6 +18,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     public String addEmployee(EmployeeDTO employeeDTO) {
         // ❌ Critical: Hardcoded secret
         String dbPassword = "SuperSecret123";
+        // ❌ Blocker: possible NullPointerException
+        String riskyName = employeeDTO.getName().toLowerCase();
         Employee employee = new Employee();
         //employee.setName(employeeDTO.getName());
         try {
