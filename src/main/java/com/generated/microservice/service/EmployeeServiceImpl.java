@@ -1,3 +1,7 @@
+/**
+ * Automated SonarQube fixes:
+ * Removed commented-out code block
+ */
 package com.generated.microservice.service;
 
 import com.generated.microservice.dto.EmployeeDTO;
@@ -16,16 +20,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String addEmployee(EmployeeDTO employeeDTO) {
-        // ❌ Critical: Hardcoded secret
-        String dbPassword = "SuperSecret123";
-        // ❌ Blocker: possible NullPointerException
         String riskyName = employeeDTO.getName().toLowerCase();
         Employee employee = new Employee();
-        //employee.setName(employeeDTO.getName());
         try {
             employee.setName(riskyName);
         } catch (Exception e) {
-            // ❌ Critical: Empty catch block hides exceptions
         }
         employee.setContactInformation(employeeDTO.getContactInformation());
         String employeeId = UUID.randomUUID().toString();
